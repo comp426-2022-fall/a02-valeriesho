@@ -20,7 +20,7 @@ if(args.h) {
 var timezone = moment.tz.guess()
 
 if(args.z) {
-    timezone = args.v;
+    timezone = args.z;
 }
 
 var latitude = 0;
@@ -43,7 +43,8 @@ if (args.e && args.w) {
     longitude = -args.w;
 }
 
-var url = "https://api.open-meteo.com/v1/forecast?latitude=" + latitude + "&longitude=" + longitude + "&daily=precipitation_hours&timezone=" + timezone;
+var url = "https://api.open-meteo.com/v1/forecast?latitude=" + latitude + "&longitude=" + longitude + "&timezone=" + timezone + "&daily=precipitation_hours";
+console.log(url);
 const response = await fetch(url);
 const data = await response.json();
 
@@ -56,23 +57,20 @@ const days = args.d;
 
 if (days == 0) {
     if (data.daily.precipitation_hours[days] != 0) {
-        console.log("You might need your galoshes ");
+        console.log("You might need your galoshes today.");
     } else {
-        console.log("You probably won't need your galoshes ")
+        console.log("You probably won't need your galoshes today.")
     }
-    console.log("today.");
 } else if (days > 1) {
     if (data.daily.precipitation_hours[days] != 0) {
-        console.log("You might need your galoshes ");
+        console.log("You might need your galoshes in " + days + " days.");
     } else {
-        console.log("You probably won't need your galoshes ")
+        console.log("You probably won't need your galoshes in " + days + " days.")
     }
-    console.log("in " + days + " days.");
 } else {
     if (data.daily.precipitation_hours[1] != 0) {
-        console.log("You might need your galoshes ");
+        console.log("You might need your galoshes tomorrow.");
     } else {
-        console.log("You probably won't need your galoshes ")
+        console.log("You probably won't need your galoshes tomorrow.")
     }
-    console.log("tomorrow.");
 }
