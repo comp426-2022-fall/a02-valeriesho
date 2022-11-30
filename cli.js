@@ -44,7 +44,6 @@ if (args.e && args.w) {
 }
 
 var url = "https://api.open-meteo.com/v1/forecast?latitude=" + latitude + "&longitude=" + longitude + "&timezone=" + timezone + "&daily=precipitation_hours";
-console.log(url);
 const response = await fetch(url);
 const data = await response.json();
 
