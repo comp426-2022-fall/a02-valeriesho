@@ -1,0 +1,27 @@
+{
+  "name": "a02-valeriesho",
+  "version": "1.0.0",
+  "description": "Galosh assignment",
+  "main": "cli.js",
+  "scripts": {
+    "test": "node cli.js -n 35.92 -w 79.05 -z America/New_York"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/comp426-2022-fall/a02-valeriesho.git"
+  },
+  "author": "valeriesho",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/comp426-2022-fall/a02-valeriesho/issues"
+  },
+  "homepage": "https://github.com/comp426-2022-fall/a02-valeriesho#readme",
+  "bin": {
+    "galosh.js": "./cli.js"
+  },
+  "dependencies": {
+    "minimist": "^1.2.7",
+    "moment-timezone": "^0.5.39",
+    "node-fetch": "^3.3.0"
+  }
+}
