@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
-const minimist = require("minimist");
-const moment = require("moment-timezone");
-const fetch = require("node-fetch");
+import minimist from "minimist";
+import moment from "moment-timezone";
+import fetch from "node-fetch";
 
 var args = minimist(process.argv.slice(2));
 
